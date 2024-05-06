@@ -1,8 +1,6 @@
 @import UIKit;
 #import "DPLTargetViewControllerProtocol.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 @class DPLDeepLink;
 
 /**
@@ -41,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
  @return A view controller conforming to the `DPLTargetViewController' protocol.
  @note Subclasses MUST override this method.
  */
-- (nullable UIViewController <DPLTargetViewController> *)targetViewController;
+- (UIViewController <DPLTargetViewController> *)targetViewController;
 
 
 /**
@@ -51,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param deepLink A deep link instance.
  @return A view controller for presenting a target view controller.
  */
-- (nullable UIViewController *)viewControllerForPresentingDeepLink:(DPLDeepLink *)deepLink;
+- (UIViewController *)viewControllerForPresentingDeepLink:(DPLDeepLink *)deepLink;
 
 
 /**
@@ -71,5 +69,3 @@ NS_ASSUME_NONNULL_BEGIN
                    inViewController:(UIViewController *)presentingViewController;
 
 @end
-
-NS_ASSUME_NONNULL_END

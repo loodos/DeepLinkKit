@@ -35,7 +35,6 @@ NSString * const DPLJSONEncodedFieldNamesKey = @"dpl:json-encoded-fields";
         }];
         
         _queryParameters = [NSDictionary dictionaryWithDictionary:mutableQueryParams];
-        _routeParameters = [NSDictionary dictionary];
     }
     return self;
 }

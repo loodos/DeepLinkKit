@@ -2,7 +2,6 @@
 
 @class DPLDeepLink;
 
-NS_ASSUME_NONNULL_BEGIN
 
 /**
  Defines the block type to be used as the handler when registering a route.
@@ -27,7 +26,7 @@ typedef BOOL(^DPLApplicationCanHandleDeepLinksBlock)(void);
  @param handled Indicates whether or not the deep link was handled.
  @param error An error if one occurred while handling a deep link URL.
  */
-typedef void(^DPLRouteCompletionBlock)(BOOL handled, NSError * _Nullable error);
+typedef void(^DPLRouteCompletionBlock)(BOOL handled, NSError *error);
 
 
 
@@ -91,7 +90,7 @@ typedef void(^DPLRouteCompletionBlock)(BOOL handled, NSError * _Nullable error);
  
  @see DPLRouteCompletionBlock
  */
-- (BOOL)handleURL:(NSURL *)url withCompletion:(nullable DPLRouteCompletionBlock)completionHandler;
+- (BOOL)handleURL:(NSURL *)url withCompletion:(DPLRouteCompletionBlock)completionHandler;
 
 
 /**
@@ -102,7 +101,7 @@ typedef void(^DPLRouteCompletionBlock)(BOOL handled, NSError * _Nullable error);
  
  @see DPLRouteCompletionBlock
  */
-- (BOOL)handleUserActivity:(NSUserActivity *)userActivity withCompletion:(nullable DPLRouteCompletionBlock)completionHandler;
+- (BOOL)handleUserActivity:(NSUserActivity *)userActivity withCompletion:(DPLRouteCompletionBlock)completionHandler;
 
 
 ///--------------------
@@ -137,7 +136,7 @@ typedef void(^DPLRouteCompletionBlock)(BOOL handled, NSError * _Nullable error);
  }
  @endcode
  */
-- (void)setObject:(nullable id)obj forKeyedSubscript:(NSString *)key
+- (void)setObject:(id)obj forKeyedSubscript:(NSString *)key
 NS_SWIFT_UNAVAILABLE("Available in Swift as: register(route: String, routeHandlerBlock: (DPLDeepLink) -> ())");
 
 
@@ -148,7 +147,6 @@ NS_SWIFT_UNAVAILABLE("Available in Swift as: register(route: String, routeHandle
  @endcode
  @note The type of the returned handler is the type you registered for that route.
  */
-- (nullable id)objectForKeyedSubscript:(NSString *)key NS_SWIFT_UNAVAILABLE("Not Available");
+- (id)objectForKeyedSubscript:(NSString *)key NS_SWIFT_UNAVAILABLE("Not Available");
 
 @end
-NS_ASSUME_NONNULL_END

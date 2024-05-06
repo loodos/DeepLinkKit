@@ -1,7 +1,5 @@
 #import "DPLDeepLink.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 /**
  A mutable deep link for constructing deep links.
  */
@@ -15,15 +13,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// The scheme URL component, or nil if not present.
-@property (nonatomic, copy, nullable) NSString *scheme;
+@property (nonatomic, copy) NSString *scheme;
 
 
 /// The host URL subcomponent, or nil if not present.
-@property (nonatomic, copy, nullable) NSString *host;
+@property (nonatomic, copy) NSString *host;
 
 
 /// The path URL component, or nil if not present.
-@property (nonatomic, copy, nullable) NSString *path;
+@property (nonatomic, copy) NSString *path;
 
 
 /// The query URL component as a mutable dictionary. Default is empty.
@@ -45,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param URLString The URL string for the deep link.
  @note If the URLString is malformed, nil is returned.
  */
-- (nullable instancetype)initWithString:(NSString *)URLString;
+- (instancetype)initWithString:(NSString *)URLString;
 
 
 
@@ -65,5 +63,3 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setObject:(id)obj forKeyedSubscript:(NSString *)key;
 
 @end
-
-NS_ASSUME_NONNULL_END

@@ -2,8 +2,6 @@
 
 @class DPLDeepLink;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface DPLDeepLink : NSObject <NSCopying, NSMutableCopying>
 
 
@@ -44,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
  dpl://dpl.io/say/hello?dpl_callback_url=btn%3A%2F%2Fdpl.io%2Fsay%2Fhi
  @endcode
  */
-@property (nonatomic, strong, readonly, nullable) NSURL *callbackURL;
+@property (nonatomic, strong, readonly) NSURL *callbackURL;
 
 
 
@@ -59,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
  @endcode
  @note If the key is contained in both queryParameters and routeParameters, the value from routeParameters is returned.
  */
-- (nullable id)objectForKeyedSubscript:(NSString *)key;
+- (id)objectForKeyedSubscript:(NSString *)key;
 
 
 
@@ -75,5 +73,3 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isEqualToDeepLink:(DPLDeepLink *)deepLink;
 
 @end
-
-NS_ASSUME_NONNULL_END
